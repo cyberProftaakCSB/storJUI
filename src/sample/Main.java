@@ -16,8 +16,10 @@ public class Main extends Application {
         primaryStage.setTitle("StorJ UI");
         primaryStage.setScene(new Scene(root, 460, 350));
         primaryStage.show();
-        ll = new LogicLayer();
 
+
+        ll = new LogicLayer();
+        ll.Test();
 
         // try to get connection to storJ (is server online?)
 
