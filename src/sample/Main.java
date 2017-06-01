@@ -8,12 +8,25 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    private LogicLayer ll;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("ui.fxml"));
+        primaryStage.setTitle("StorJ UI");
+        primaryStage.setScene(new Scene(root, 460, 350));
         primaryStage.show();
+        ll = new LogicLayer();
+
+
+        // try to get connection to storJ (is server online?)
+
+        //get login shit from form. tty to sign in.
+
+        //if (login.succesfull) show 2e form.
+
+        //else show error message.
+
     }
 
 
