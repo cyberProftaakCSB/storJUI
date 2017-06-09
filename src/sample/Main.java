@@ -4,7 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+
+import javax.swing.*;
+import java.util.Optional;
 
 public class Main extends Application {
 
@@ -21,11 +26,12 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 460, 350));
         primaryStage.show();
 
-        ll = new LogicLayer();
+        ll = new LogicLayer(this);
+        //ll.checkConnectionStorJ();
+        ll.checkStorJInstalled();
 
-
-        System.out.println(ll.checkStorJInstalled());
-        System.out.println(ll.checkConnectionStorJ());
+        //System.out.println(ll.checkStorJInstalled());
+        //System.out.println(ll.checkConnectionStorJ());
 
 
         // try to get connection to storJ (is server online?)
@@ -37,4 +43,9 @@ public class Main extends Application {
         //else show error message.
 
         }
+
+
+    public void showMessage(String info){
+        JOptionPane.showMessageDialog(null, info);
+    }
 }
